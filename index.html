@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Gorkha Grills</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#060606;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* NAV */
+
+nav{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+z-index:999;
+
+display:flex;
+
+justify-content:space-between;
+
+padding:22px 8%;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(20px);
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:800;
+
+color:#f97316;
+
+}
+
+.menu{
+
+display:flex;
+
+gap:34px;
+
+}
+
+.menu a{
+
+color:white;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.menu a:hover{
+
+color:#f97316;
+
+}
+
+.dropdown{
+
+position:relative;
+
+}
+
+.dropdown-menu{
+
+position:absolute;
+
+top:40px;
+
+background:#111;
+
+padding:20px;
+
+display:none;
+
+border-radius:18px;
+
+min-width:180px;
+
+}
+
+.dropdown:hover .dropdown-menu{
+
+display:block;
+
+animation:slide .4s;
+
+}
+
+.dropdown-menu a{
+
+display:block;
+
+padding:10px;
+
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.slide{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+opacity:0;
+
+transition:1.4s;
+
+background-size:cover;
+
+background-position:center;
+
+transform:scale(1.08);
+
+}
+
+.active{
+
+opacity:1;
+
+}
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+rgba(0,0,0,.4),
+rgba(0,0,0,.88)
+);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:10;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:0 8%;
+
+}
+
+.hero h1{
+
+font-size:95px;
+
+margin-bottom:18px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:800px;
+
+line-height:2;
+
+color:#d4d4d4;
+
+}
+
+.buttons{
+
+margin-top:40px;
+
+display:flex;
+
+gap:20px;
+
+}
+
+button{
+
+padding:18px 34px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+linear-gradient(
+45deg,
+#f97316,
+#ef4444
+);
+
+color:white;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+button:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* SIGNATURE */
+
+.section{
+
+padding:120px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.title h2{
+
+font-size:54px;
+
+margin-bottom:14px;
+
+}
+
+.title p{
+
+color:#9ca3af;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(280px,1fr)
+);
+
+gap:35px;
+
+}
+
+.card{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+border-radius:30px;
+
+overflow:hidden;
+
+transition:.5s;
+
+}
+
+.card:hover{
+
+transform:
+translateY(-10px);
+
+}
+
+.card img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+}
+
+.content{
+
+padding:28px;
+
+}
+
+.content h3{
+
+font-size:28px;
+
+margin-bottom:12px;
+
+}
+
+.price{
+
+margin-top:16px;
+
+font-size:28px;
+
+color:#f97316;
+
+}
+
+/* MENU */
+
+.menu-box{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:40px;
+
+}
+
+.category{
+
+background:
+rgba(255,255,255,.04);
+
+padding:35px;
+
+border-radius:30px;
+
+}
+
+.category h3{
+
+font-size:28px;
+
+margin-bottom:25px;
+
+color:#f97316;
+
+}
+
+.item{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:12px 0;
+
+border-bottom:
+
+1px solid rgba(
+255,
+255,
+255,
+.06
+);
+
+}
+
+.item:hover{
+
+padding-left:10px;
+
+transition:.3s;
+
+}
+/* =====================
+LOGO
+===================== */
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+cursor:pointer;
+
+}
+
+/* LOGO BOX */
+
+.logo-box{
+
+width:78px;
+
+height:78px;
+
+background:white;
+
+border-radius:22px;
+
+padding:8px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:
+
+0 20px 60px
+rgba(
+249,
+115,
+22,
+0.22
+);
+
+transition:.5s;
+
+overflow:hidden;
+
+}
+
+/* IMAGE */
+
+.logo-box img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+transition:.6s;
+
+}
+
+/* HOVER */
+
+.logo:hover .logo-box{
+
+transform:
+
+translateY(-4px)
+rotate(-2deg);
+
+box-shadow:
+
+0 35px 90px
+rgba(
+249,
+115,
+22,
+0.35
+);
+
+}
+
+.logo:hover img{
+
+transform:
+
+scale(1.06);
+
+}
+
+/* TEXT */
+
+.brand{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.brand-title{
+
+font-size:34px;
+
+font-weight:800;
+
+line-height:1;
+
+background:
+
+linear-gradient(
+45deg,
+#f97316,
+#ffd166
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+.brand-sub{
+
+margin-top:6px;
+
+font-size:12px;
+
+letter-spacing:2px;
+
+color:#bdbdbd;
+
+text-transform:uppercase;
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.logo-box{
+
+width:58px;
+
+height:58px;
+
+}
+
+.brand-title{
+
+font-size:22px;
+
+}
+
+.brand-sub{
+
+display:none;
+
+}
+
+}
+
+/* FOOTER */
+
+footer{
+
+padding:80px;
+
+text-align:center;
+
+color:#777;
+
+}
+
+@keyframes slide{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(-10px);
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@media(max-width:800px){
+
+.hero h1{
+
+font-size:58px;
+
+}
+
+.menu-box{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =====================
+FOOTER
+===================== */
+
+.footer{
+
+position:relative;
+
+padding:100px 8% 40px;
+
+margin-top:120px;
+
+background:
+
+linear-gradient(
+180deg,
+#090909,
+#020202
+);
+
+overflow:hidden;
+
+}
+
+.footer-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+circle at top,
+rgba(249,115,22,.08),
+transparent
+);
+
+}
+
+/* CONTENT */
+
+.footer-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.footer-brand{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.footer-brand h2{
+
+font-size:52px;
+
+font-weight:800;
+
+background:
+
+linear-gradient(
+45deg,
+#f97316,
+#ffd166
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+margin-bottom:12px;
+
+}
+
+.footer-brand p{
+
+color:#bdbdbd;
+
+letter-spacing:4px;
+
+}
+
+/* GRID */
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+3,
+1fr
+);
+
+gap:30px;
+
+}
+
+/* CARD */
+
+.footer-card{
+
+background:
+
+rgba(
+255,
+255,
+255,
+0.04
+);
+
+border:
+
+1px solid
+rgba(
+255,
+255,
+255,
+0.08
+);
+
+padding:35px;
+
+border-radius:26px;
+
+backdrop-filter:
+
+blur(18px);
+
+transition:.4s;
+
+}
+
+.footer-card:hover{
+
+transform:
+
+translateY(-8px);
+
+border-color:
+
+rgba(
+249,
+115,
+22,
+.4
+);
+
+box-shadow:
+
+0 25px 60px
+rgba(
+249,
+115,
+22,
+.12
+);
+
+}
+
+.footer-card h3{
+
+color:#f97316;
+
+margin-bottom:22px;
+
+font-size:24px;
+
+}
+
+.footer-card p{
+
+line-height:2;
+
+color:#d6d6d6;
+
+}
+
+/* COPYRIGHT */
+
+.footer-bottom{
+
+margin-top:70px;
+
+padding-top:30px;
+
+text-align:center;
+
+color:#8c8c8c;
+
+border-top:
+
+1px solid
+rgba(
+255,
+255,
+255,
+.08
+);
+
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-brand h2{
+
+font-size:38px;
+
+}
+
+}
+/* ======================================
+FULL WEBSITE RESPONSIVE FIX
+PASTE AT VERY BOTTOM
+====================================== */
+
+/* GLOBAL */
+
+html{
+
+font-size:16px;
+
+overflow-x:hidden;
+
+}
+
+body{
+
+overflow-x:hidden;
+
+}
+
+img{
+
+max-width:100%;
+
+height:auto;
+
+display:block;
+
+}
+
+*{
+
+box-sizing:border-box;
+
+}
+
+/* NAV */
+
+nav{
+
+padding:
+
+18px
+clamp(16px,5vw,90px);
+
+flex-wrap:wrap;
+
+gap:18px;
+
+}
+
+.menu{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:22px;
+
+}
+
+.menu a{
+
+font-size:15px;
+
+}
+
+.dropdown-menu{
+
+right:0;
+
+left:auto;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+height:auto;
+
+}
+
+.hero-content{
+
+padding:
+
+140px
+20px
+80px;
+
+}
+
+.hero h1{
+
+font-size:
+
+clamp(
+44px,
+10vw,
+95px
+);
+
+line-height:1.1;
+
+}
+
+.hero p{
+
+font-size:
+
+clamp(
+14px,
+2vw,
+22px
+);
+
+max-width:750px;
+
+}
+
+.buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:14px;
+
+}
+
+button{
+
+width:auto;
+
+min-width:170px;
+
+}
+
+/* SECTION */
+
+.section{
+
+padding:
+
+90px
+clamp(
+18px,
+5vw,
+90px
+);
+
+}
+
+.title h2{
+
+font-size:
+
+clamp(
+34px,
+6vw,
+54px
+);
+
+}
+
+.title p{
+
+font-size:
+
+clamp(
+14px,
+2vw,
+18px
+);
+
+}
+
+/* SIGNATURE */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(
+280px,
+1fr
+)
+
+);
+
+gap:26px;
+
+}
+
+.card img{
+
+height:
+
+clamp(
+220px,
+32vw,
+320px
+);
+
+}
+
+.content{
+
+padding:24px;
+
+}
+
+.content h3{
+
+font-size:
+
+clamp(
+20px,
+3vw,
+28px
+);
+
+}
+
+/* MENU */
+
+.menu-box{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(
+360px,
+1fr
+)
+
+);
+
+gap:26px;
+
+}
+
+.category{
+
+padding:
+
+28px;
+
+overflow:hidden;
+
+}
+
+.category h3{
+
+font-size:
+
+clamp(
+22px,
+3vw,
+28px
+);
+
+}
+
+.item{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+/* LOGO */
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+}
+
+.logo-box{
+
+width:
+
+clamp(
+60px,
+8vw,
+78px
+);
+
+height:
+
+clamp(
+60px,
+8vw,
+78px
+);
+
+}
+
+.brand-title{
+
+font-size:
+
+clamp(
+22px,
+4vw,
+34px
+);
+
+}
+
+.brand-sub{
+
+font-size:11px;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+padding:
+
+80px
+clamp(
+20px,
+5vw,
+90px
+)
+35px;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(
+260px,
+1fr
+)
+
+);
+
+gap:20px;
+
+}
+
+.footer-card{
+
+padding:28px;
+
+}
+
+.footer-brand h2{
+
+font-size:
+
+clamp(
+34px,
+7vw,
+52px
+);
+
+}
+
+/* TABLET */
+
+@media(max-width:900px){
+
+nav{
+
+flex-direction:column;
+
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
+.menu-box{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+nav{
+
+padding:16px;
+
+}
+
+.menu{
+
+gap:14px;
+
+font-size:14px;
+
+}
+
+.hero-content{
+
+padding-top:180px;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.menu-box{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-brand{
+
+margin-bottom:40px;
+
+}
+
+}
+
+/* SMALL PHONE */
+
+@media(max-width:420px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+}
+
+.brand-sub{
+
+display:none;
+
+}
+
+.logo{
+
+justify-content:center;
+
+}
+
+.category{
+
+padding:22px;
+
+}
+
+.footer-card{
+
+padding:22px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+    <div class="logo-box">
+
+        <img
+            src="grok_image_1779517676571.jpg.jpeg"
+            alt="Gorkha Grills Logo">
+
+    </div>
+
+    <div class="brand">
+
+        <span class="brand-title">
+
+            Gurkha Grills
+
+        </span>
+
+        <span class="brand-sub">
+
+            Nepali • Indian Cafe
+
+        </span>
+
+    </div>
+
+</div>
+
+<div class="menu">
+
+<a href="#">Home</a>
+
+<div class="dropdown">
+
+<a href="#">
+
+Menu ▼
+
+</a>
+
+<div class="dropdown-menu">
+
+<a href="#signature">Signature</a>
+
+<a href="#menu">Full Menu</a>
+
+<a href="#">Chef Special</a>
+
+</div>
+
+</div>
+
+<a href="#">
+
+About
+
+</a>
+
+<a href="#">
+
+Contact
+
+</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div
+class="slide active"
+
+style="background-image:url('https://as2.ftcdn.net/v2/jpg/07/01/79/37/1000_F_701793770_7o6kR2R7NgrWP15YkCFKj1kFctkRozNm.jpg')">
+
+</div>
+
+<div
+class="slide"
+
+style="background-image:url('https://as2.ftcdn.net/v2/jpg/06/03/64/07/1000_F_603640779_QNVbk3tSd5nEU1uAO7RifpHUjLZCsjDJ.jpg')">
+
+</div>
+
+<div
+class="slide"
+
+style="background-image:url('https://as2.ftcdn.net/v2/jpg/05/48/21/19/1000_F_548211965_jCBY8HqNotmgwzd7Lr0GjX6E4Dc6ylWb.jpg')">
+
+</div>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+
+GURKHA GRILLS
+
+</h1>
+
+<p>
+
+Premium Nepali • Indian Cafe
+
+Experience dining with chef-crafted dishes.
+
+</p>
+
+<div class="buttons">
+
+<button
+onclick="goSignature()">
+
+Explore Menu
+
+</button>
+
+<button>
+
+Chef Specials
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section
+class="section"
+
+id="signature">
+
+<div class="title">
+
+<h2>
+
+Signature Collection
+
+</h2>
+
+<p>
+
+Selected recommendations
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://as2.ftcdn.net/v2/jpg/05/81/48/89/1000_F_581488930_jSWEv0Pd7fXqvV7llro7YCD3l0JfHdEA.jpg">
+
+<div class="content">
+
+<h3>
+
+Chicken Biryani
+
+</h3>
+
+<div class="price">
+
+₹220
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://as2.ftcdn.net/v2/jpg/11/00/22/91/1000_F_1100229184_SJln8hbcV4Gjvwhg9ONIdVCPf3GmDtF4.jpg">
+
+<div class="content">
+
+<h3>
+
+Paneer Butter Masala
+
+</h3>
+
+<div class="price">
+
+₹220
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://as2.ftcdn.net/v2/jpg/18/27/12/65/1000_F_1827126536_7JBw0ODZTVnxn26IhFKsqJ8R8ehmahqu.jpg">
+
+<div class="content">
+
+<h3>
+
+Tandoori Chicken
+
+</h3>
+
+<div class="price">
+
+₹400
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://as1.ftcdn.net/v2/jpg/18/69/97/96/1000_F_1869979622_x89yifnwl6mSg4fg79704wPDEUDTSWJI.jpg">
+
+<div class="content">
+
+<h3>
+
+Masala Chai
+
+</h3>
+
+<div class="price">
+
+₹20
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section
+class="section"
+
+id="menu">
+
+<div class="title">
+
+<h2>
+
+Full Menu
+
+</h2>
+
+<p>
+
+Luxury Café Selection
+
+</p>
+
+</div>
+<div class="menu-box">
+
+<!-- SOUPS -->
+
+<div class="category">
+
+<h3>SOUPS</h3>
+
+<div class="item"><span>Veg Soup</span><span>₹40</span></div>
+<div class="item"><span>Veg Hot & Sour Soup</span><span>₹50</span></div>
+<div class="item"><span>Tomato Soup</span><span>₹50</span></div>
+<div class="item"><span>Veg Mix Soup</span><span>₹70</span></div>
+<div class="item"><span>Sweet Corn Soup</span><span>₹60</span></div>
+
+<h4>Non-Veg</h4>
+
+<div class="item"><span>Chicken Soup</span><span>₹60</span></div>
+<div class="item"><span>Chicken Hot & Sour</span><span>₹70</span></div>
+<div class="item"><span>Chicken Manchaw</span><span>₹50</span></div>
+<div class="item"><span>Chicken Garlic</span><span>₹70</span></div>
+
+</div>
+
+<!-- STARTERS -->
+
+<div class="category">
+
+<h3>STARTERS & SNACKS</h3>
+
+<div class="item"><span>Chana Fry</span><span>₹110</span></div>
+<div class="item"><span>Paneer Pakora</span><span>₹180</span></div>
+<div class="item"><span>Veg Manchurian</span><span>₹150</span></div>
+<div class="item"><span>Paneer Chilly</span><span>₹180</span></div>
+<div class="item"><span>Mushroom Chilly</span><span>₹190</span></div>
+
+<h4>Non-Veg</h4>
+
+<div class="item"><span>Egg Bhurjee</span><span>₹50</span></div>
+<div class="item"><span>Chicken Chilly</span><span>₹180</span></div>
+<div class="item"><span>Chicken Dry Fry</span><span>₹160</span></div>
+<div class="item"><span>Chicken Lollypop</span><span>₹250</span></div>
+<div class="item"><span>Fish Fry</span><span>₹160</span></div>
+
+</div>
+
+<!-- TANDOOR -->
+
+<div class="category">
+
+<h3>TANDOOR SPECIALS</h3>
+
+<div class="item"><span>Chicken Seek Kabab (4)</span><span>₹250</span></div>
+<div class="item"><span>Chicken Seek Kabab (8)</span><span>₹450</span></div>
+<div class="item"><span>Chicken Tikka</span><span>₹250</span></div>
+<div class="item"><span>Chicken Malai Tikka</span><span>₹280</span></div>
+<div class="item"><span>Paneer Tikka</span><span>₹250</span></div>
+<div class="item"><span>Mushroom Tikka</span><span>₹250</span></div>
+<div class="item"><span>Tandoori Chicken Half</span><span>₹220</span></div>
+<div class="item"><span>Tandoori Chicken Full</span><span>₹400</span></div>
+
+</div>
+
+<!-- CHOWMEIN -->
+
+<div class="category">
+
+<h3>CHOWMEIN & PASTA</h3>
+
+<div class="item"><span>Veg Chowmein</span><span>₹100</span></div>
+<div class="item"><span>Mix Veg Chowmein</span><span>₹150</span></div>
+<div class="item"><span>Egg Chowmein</span><span>₹100</span></div>
+<div class="item"><span>Chicken Chowmein</span><span>₹150</span></div>
+<div class="item"><span>Mix Non-Veg</span><span>₹180</span></div>
+
+<h4>Pasta</h4>
+
+<div class="item"><span>Chicken Pasta</span><span>₹150</span></div>
+<div class="item"><span>Veg White Sauce</span><span>₹150</span></div>
+<div class="item"><span>Chicken White Sauce</span><span>₹220</span></div>
+
+</div>
+
+<!-- RICE -->
+
+<div class="category">
+
+<h3>RICE & BIRYANI</h3>
+
+<div class="item"><span>Plain Rice</span><span>₹40</span></div>
+<div class="item"><span>Jeera Rice</span><span>₹60–110</span></div>
+<div class="item"><span>Veg Fried Rice</span><span>₹100</span></div>
+<div class="item"><span>Egg Fried Rice</span><span>₹120</span></div>
+<div class="item"><span>Chicken Fried Rice</span><span>₹180</span></div>
+
+<h4>Biryani</h4>
+
+<div class="item"><span>Veg Biryani</span><span>₹180</span></div>
+<div class="item"><span>Chicken Biryani</span><span>₹220</span></div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="category">
+
+<h3>MAIN COURSE</h3>
+
+<div class="item"><span>Dum Aloo</span><span>₹100</span></div>
+<div class="item"><span>Palak Paneer</span><span>₹190</span></div>
+<div class="item"><span>Paneer Butter Masala</span><span>₹220</span></div>
+<div class="item"><span>Kadhai Paneer</span><span>₹250</span></div>
+<div class="item"><span>Shahi Paneer</span><span>₹270</span></div>
+
+<h4>Non-Veg</h4>
+
+<div class="item"><span>Chicken Butter Masala</span><span>₹280</span></div>
+<div class="item"><span>Chicken Korma</span><span>₹350</span></div>
+<div class="item"><span>Chicken Murg Masallam</span><span>₹600</span></div>
+<div class="item"><span>Mutton Curry</span><span>₹260</span></div>
+
+</div>
+
+<!-- DAL -->
+
+<div class="category">
+
+<h3>DAL SPECIALS</h3>
+
+<div class="item"><span>Yellow Dal Fry</span><span>₹80</span></div>
+<div class="item"><span>Dal Tadka</span><span>₹60–110</span></div>
+<div class="item"><span>Dal Makhani</span><span>₹150</span></div>
+
+<h3 style="margin-top:40px">
+
+INDIAN BREADS
+
+</h3>
+
+<div class="item"><span>Tawa Roti</span><span>₹10</span></div>
+<div class="item"><span>Butter Naan</span><span>₹35</span></div>
+<div class="item"><span>Garlic Naan</span><span>₹50</span></div>
+<div class="item"><span>Paneer Paratha</span><span>₹80</span></div>
+
+</div>
+
+<!-- SIDES -->
+
+<div class="category">
+
+<h3>SALADS & SIDES</h3>
+
+<div class="item"><span>Dry Papad</span><span>₹15–20</span></div>
+<div class="item"><span>Masala Papad</span><span>₹40–60</span></div>
+<div class="item"><span>Green Salad</span><span>₹100</span></div>
+<div class="item"><span>French Fries</span><span>₹120</span></div>
+<div class="item"><span>Fruit Salad</span><span>₹160</span></div>
+
+<h3 style="margin-top:40px">
+
+TEA & COFFEE
+
+</h3>
+
+<div class="item"><span>Black Tea</span><span>₹15</span></div>
+<div class="item"><span>Lemon Tea</span><span>₹15</span></div>
+<div class="item"><span>Tea</span><span>₹20</span></div>
+<div class="item"><span>Coffee</span><span>₹30</span></div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-overlay"></div>
+
+<div class="footer-content">
+
+<div class="footer-brand">
+
+<h2>
+
+Gorkha Grills
+
+</h2>
+
+<p>
+
+Premium Nepali • Indian Café
+
+</p>
+
+</div>
+
+<div class="footer-grid">
+
+<!-- LOCATION -->
+
+<div class="footer-card">
+
+<h3>
+
+📍 Location
+
+</h3>
+
+<p>
+
+Sahera Road, Kutiyatu
+
+</p>
+
+<p>
+
+Opp. HP Petrol Pump
+
+</p>
+
+<p>
+
+Namkum
+
+</p>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="footer-card">
+
+<h3>
+
+📞 Contact
+
+</h3>
+
+<p>
+
+7634800421
+
+</p>
+
+</div>
+
+<!-- HOURS -->
+
+<div class="footer-card">
+
+<h3>
+
+🕒 Opening Hours
+
+</h3>
+
+<p>
+
+Mon – Sun
+
+</p>
+
+<p>
+
+10:00 AM – 11:00 PM
+
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Gorkha Grills • Crafted with Himalayan Hospitality
+
+</div>
+
+</div>
+
+</footer>
+<script>
+
+function goSignature(){
+
+document
+.getElementById(
+"signature"
+)
+.scrollIntoView({
+
+behavior:
+"smooth"
+
+});
+
+}
+
+const slides=
+document
+.querySelectorAll(
+".slide"
+);
+
+let i=0;
+
+setInterval(()=>{
+
+slides[i]
+.classList
+.remove(
+"active"
+);
+
+i++;
+
+if(
+i>=slides.length
+){
+
+i=0;
+
+}
+
+slides[i]
+.classList
+.add(
+"active"
+);
+
+},4000);
+
+</script>
+
+</body>
+
+</html>
